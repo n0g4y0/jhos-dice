@@ -2,6 +2,9 @@ class Pieza{
     constructor(nombre){
         this.nombre = nombre;
     }
+    get name(){
+        return this.name;
+    }
     get value(){
         return  this.nombre[0].toUpperCase();
     }
