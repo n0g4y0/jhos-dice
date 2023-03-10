@@ -58,6 +58,35 @@ function mostrarPorTiempo(name){
 }
 
 
+function mostrarSecuencia(delay, arr){
+    let times = arr.length;
+    let count = 0;
+
+    const intervalId = setInterval(() => {
+
+    if(count < arr.length){
+        let $elemento = document.querySelector(`#${arr[count].nombre}`);
+        $elemento.classList.add(`resaltar-${arr[count].nombre}`);
+        console.log(`agregando super ${arr[count].nombre}`);
+    }
+    
+      if (count >= times) {
+        clearInterval(intervalId);
+        return;
+      }
+      setTimeout(() => {
+        
+        let $elemento = document.querySelector(`#${arr[count-1].nombre}`);
+        $elemento.classList.remove(`resaltar-${arr[count-1].nombre}`);
+        console.log(`eliminando super ${arr[count-1].nombre}`);
+        
+      }, delay);
+      count++;
+    }, delay * 2, arr);
+
+}
+
+
 // EVENTOS
 
 document.querySelector("#blue").onclick = function(event){
