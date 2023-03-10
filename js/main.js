@@ -1,7 +1,3 @@
-
-let listaSecuenciaJuego = []
-let listaSecuenciaUsuario = []
-
 class Pieza{
     constructor(nombre){
         this.nombre = nombre;
@@ -12,6 +8,10 @@ class Pieza{
 }
 
 let valores = [new Pieza('blue'),new Pieza('yellow'),new Pieza('red'),new Pieza('green')];
+
+
+let listaSecuenciaJuego = []
+let listaSecuenciaUsuario = []
 
 function obtenerValorAleatorio(valores){
 
