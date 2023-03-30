@@ -96,6 +96,18 @@ function capturarSecuenciasUsuario(cantidad){
     }
 }
 
+function inicioJuego(){
+    const DURACION_MOSTRAR_SECUENCIA = 1000;
+    
+    resetear();
+
+    agregarValorALista(listaSecuenciaJuego,valores);
+
+    mostrarSecuencia(DURACION_MOSTRAR_SECUENCIA,listaSecuenciaJuego)
+
+    habilitarBotonIniciarJuego(false);
+    
+}
 
 // EVENTOS
 
