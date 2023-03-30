@@ -44,7 +44,6 @@ function resaltarPieza(name){
     
     let $elemento = document.querySelector(`#${name}`);
     $elemento.classList.add(`resaltar-${name}`);
-    console.log(`agregando super ${name}`);
 
     setTimeout( function(){
         mostrarPorTiempo(name);
@@ -57,7 +56,6 @@ function mostrarPorTiempo(name){
 
     let $elemento = document.querySelector(`#${name}`);
     $elemento.classList.remove(`resaltar-${name}`);
-    console.log(`eliminando super ${name}`);
 
 }
 
@@ -70,7 +68,6 @@ function mostrarSecuencia(delay, arr){
     if(count < arr.length){
         let $elemento = document.querySelector(`#${arr[count].nombre}`);
         $elemento.classList.add(`resaltar-${arr[count].nombre}`);
-        console.log(`agregando super ${arr[count].nombre}`);
     }
     
       if (count >= times) {
@@ -82,7 +79,6 @@ function mostrarSecuencia(delay, arr){
         
         let $elemento = document.querySelector(`#${arr[count-1].nombre}`);
         $elemento.classList.remove(`resaltar-${arr[count-1].nombre}`);
-        console.log(`eliminando super ${arr[count-1].nombre}`);
         
       }, delay);
       count++;
@@ -156,7 +152,6 @@ function habilitarBotonCompararSecuencias(value){
 }
 
 function cambiarPuntaje(){
-    console.log(document.querySelector("h2"));
     document.querySelector("h2").innerText = `Puntaje: ${puntaje}`;
 }
 function usuarioIntrodujoSecuencia(){
@@ -198,9 +193,7 @@ document.querySelector("#iniciar-juego").onclick = function(event){
 }
 document.querySelector("#comparar").onclick = function(event){
     habilitarBotonCompararSecuencias(false);
-    let res = secuenciasSonIguales(listaSecuenciaJuego,listaSecuenciaUsuario)
-    console.log(res);
-    console.log(puntaje);
+    let res = secuenciasSonIguales(listaSecuenciaJuego,listaSecuenciaUsuario);
     if(res){
         nivel++;
         puntaje++;
