@@ -88,6 +88,14 @@ function mostrarSecuencia(delay, arr){
 
 }
 
+function capturarSecuenciasUsuario(cantidad){
+
+    if(cantidad === listaSecuenciaUsuario.length){
+
+        return listaSecuenciaUsuario;
+    }
+}
+
 
 // EVENTOS
 
