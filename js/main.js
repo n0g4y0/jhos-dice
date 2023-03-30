@@ -140,6 +140,10 @@ function habilitarBotonCompararSecuencias(value){
     value?compararBtn.disabled = false: compararBtn.disabled = true; 
 }
 
+function cambiarPuntaje(){
+    console.log(document.querySelector("h2"));
+    document.querySelector("h2").innerText = `Puntaje: ${puntaje}`;
+}
 
 // EVENTOS
 
