@@ -108,6 +108,16 @@ function inicioJuego(){
     habilitarBotonIniciarJuego(false);
     
 }
+function resetear(){
+
+    listaSecuenciaJuego = []
+    listaSecuenciaUsuario = []
+    puntaje = 0;
+    nivel = 1;
+    continua = true;
+    deshabilitarBotones(true);
+}
+
 
 // EVENTOS
 
