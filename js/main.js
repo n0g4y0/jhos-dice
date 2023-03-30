@@ -48,6 +48,7 @@ function resaltarPieza(name){
 
     setTimeout( function(){
         mostrarPorTiempo(name);
+    },DURACION_SECUENCIA,name);
 
 }
 
@@ -59,7 +60,6 @@ function mostrarPorTiempo(name){
     console.log(`eliminando super ${name}`);
 
 }
-
 
 function mostrarSecuencia(delay, arr){
     let times = arr.length;
@@ -74,6 +74,7 @@ function mostrarSecuencia(delay, arr){
     }
     
       if (count >= times) {
+        deshabilitarBotones(false);
         clearInterval(intervalId);
         return;
       }
