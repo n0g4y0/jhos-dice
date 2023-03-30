@@ -115,6 +115,12 @@ function continuarJuego(){
     mostrarSecuencia(DURACION_SECUENCIA,listaSecuenciaJuego)
 }
 
+function repetirSecuencia(cantidad){
+    for(let i=1; i <= cantidad; i++ ){
+        agregarValorALista(listaSecuenciaJuego,valores);
+    }
+}
+
 function resetear(){
 
     listaSecuenciaJuego = []
