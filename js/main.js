@@ -108,6 +108,13 @@ function inicioJuego(){
     habilitarBotonIniciarJuego(false);
     
 }
+function continuarJuego(){
+
+    agregarValorALista(listaSecuenciaJuego,valores);
+
+    mostrarSecuencia(DURACION_SECUENCIA,listaSecuenciaJuego)
+}
+
 function resetear(){
 
     listaSecuenciaJuego = []
