@@ -144,6 +144,12 @@ function cambiarPuntaje(){
     console.log(document.querySelector("h2"));
     document.querySelector("h2").innerText = `Puntaje: ${puntaje}`;
 }
+function usuarioIntrodujoSecuencia(){
+    if(listaSecuenciaUsuario.length > 0){
+        habilitarBotonCompararSecuencias(true);
+    }
+}
+
 
 // EVENTOS
 
