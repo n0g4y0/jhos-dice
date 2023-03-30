@@ -118,6 +118,28 @@ function resetear(){
     deshabilitarBotones(true);
 }
 
+function deshabilitarBotones(value){
+    let botones = document.querySelectorAll(".pieza");
+    
+
+      for (var i = 0; i < botones.length; i++) {
+        if(value){
+            botones[i].disabled = true;
+        }else{
+            botones[i].disabled = false;
+        }    
+    }
+    habilitarBotonCompararSecuencias(false);
+}
+function habilitarBotonIniciarJuego(value){
+    let iniciarBtn = document.querySelector("#iniciar-juego");
+    value? iniciarBtn.disabled = false: iniciarBtn.disabled = true; 
+}
+function habilitarBotonCompararSecuencias(value){
+    let compararBtn = document.querySelector("#comparar");
+    value?compararBtn.disabled = false: compararBtn.disabled = true; 
+}
+
 
 // EVENTOS
 
