@@ -190,6 +190,10 @@ document.querySelector("#green").onclick = function(event){
     usuarioIntrodujoSecuencia();
 }
 
+document.querySelector("#iniciar-juego").onclick = function(event){
+    inicioJuego();
+    
+}
 document.querySelector("#comparar").onclick = function(event){
     habilitarBotonCompararSecuencias(false);
     let res = secuenciasSonIguales(listaSecuenciaJuego,listaSecuenciaUsuario)
