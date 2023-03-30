@@ -12,9 +12,12 @@ class Pieza{
 
 let valores = [new Pieza('blue'),new Pieza('yellow'),new Pieza('red'),new Pieza('green')];
 
-
+const DURACION_SECUENCIA = 1000;
 let listaSecuenciaJuego = []
 let listaSecuenciaUsuario = []
+let puntaje = 0;
+let nivel = 1;
+let continua = true;
 
 function obtenerValorAleatorio(valores){
 
@@ -44,7 +47,6 @@ function resaltarPieza(name){
 
     setTimeout( function(){
         mostrarPorTiempo(name);
-    },1000,name);
 
 }
 
