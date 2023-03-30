@@ -18,6 +18,7 @@ let listaSecuenciaUsuario = []
 let puntaje = 0;
 let nivel = 1;
 let continua = true;
+deshabilitarBotones(true);
 
 function obtenerValorAleatorio(valores){
 
