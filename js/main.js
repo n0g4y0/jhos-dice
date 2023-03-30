@@ -154,19 +154,29 @@ function usuarioIntrodujoSecuencia(){
 // EVENTOS
 
 document.querySelector("#blue").onclick = function(event){
+    listaSecuenciaUsuario.push(new Pieza(event.target.value));
     resaltarPieza(event.target.value);
+    usuarioIntrodujoSecuencia();
 }
 
 document.querySelector("#red").onclick = function(event){
+    listaSecuenciaUsuario.push(new Pieza(event.target.value));
     resaltarPieza(event.target.value);
+    usuarioIntrodujoSecuencia();
 }
 
 document.querySelector("#yellow").onclick = function(event){
+    listaSecuenciaUsuario.push(new Pieza(event.target.value));
     resaltarPieza(event.target.value);
+    usuarioIntrodujoSecuencia();
 }
 
 document.querySelector("#green").onclick = function(event){
+    listaSecuenciaUsuario.push(new Pieza(event.target.value));
     resaltarPieza(event.target.value);
+    usuarioIntrodujoSecuencia();
+}
+
 document.querySelector("#comparar").onclick = function(event){
     habilitarBotonCompararSecuencias(false);
     let res = secuenciasSonIguales(listaSecuenciaJuego,listaSecuenciaUsuario)
