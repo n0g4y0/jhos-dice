@@ -161,6 +161,26 @@ document.querySelector("#yellow").onclick = function(event){
 
 document.querySelector("#green").onclick = function(event){
     resaltarPieza(event.target.value);
+document.querySelector("#comparar").onclick = function(event){
+    habilitarBotonCompararSecuencias(false);
+    let res = secuenciasSonIguales(listaSecuenciaJuego,listaSecuenciaUsuario)
+    console.log(res);
+    console.log(puntaje);
+    if(res){
+        nivel++;
+        puntaje++;
+        cambiarPuntaje();
+        continuarJuego();
+
+    }else{
+        alert("Perdiste");
+        habilitarBotonIniciarJuego(true);
+        continua = false;
+        resetear()
+        cambiarPuntaje();
+        
+    }
+    listaSecuenciaUsuario = [];
 }
 
 
