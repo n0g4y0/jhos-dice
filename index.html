@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
+	<title>Simon Dice</title>
   	<meta charset="utf-8">
   	<meta name="description" content="Your description goes here">
   	<meta name="keywords" content="one, two, three">
@@ -9,11 +10,33 @@
 		<title>Blank Template</title>
 
 		<!-- external CSS link -->
+		<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
 		<link rel="stylesheet" href="css/normalize.css">
 		<link rel="stylesheet" href="css/style.css">
 	</head>
 	<body>
-
+		<main>
+			<div class="container">
+				<div class="row">
+					<div class="col-sm">
+						<div class="alert alert-success" role="alert" id="estado"></div>
+			
+					</div>
+				</div>
+			</div>
+			<h1>Simon Dice</h1>
+			<h2 id="puntaje">Puntaje: 0</h2>
+			<div id="contenedor">
+				<button class="pieza standardBlue" id="blue" value="blue"></button>
+				<button class="pieza standardYellow" id="yellow" value="yellow"></button>
+				<button class="pieza standardRed" id="red" value="red"></button>
+				<button class="pieza standardGreen" id="green" value="green"></button>
+			</div>
+			<div id="control">
+				<button  type="button" class="tamanio btn btn-primary" id="iniciar-juego" value="">Iniciar</button>
+			</div>
+		</main>
+		
 		<script type="text/javascript" src="js/main.js"></script>
 	</body>
 </html>
