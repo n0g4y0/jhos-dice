@@ -1,0 +1,22 @@
+{
+  "name": "jhos-dice",
+  "version": "1.0.0",
+  "description": "juego que simula el juego original Simon says",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/n0g4y0/jhos-dice.git"
+  },
+  "author": "n0g4y0",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/n0g4y0/jhos-dice/issues"
+  },
+  "homepage": "https://github.com/n0g4y0/jhos-dice#readme",
+  "dependencies": {
+    "bootstrap": "^5.2.3"
+  }
+}
