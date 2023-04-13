@@ -19,6 +19,7 @@ let puntaje = 0;
 let nivel = 1;
 let continua = true;
 deshabilitarBotones(true);
+actualizarEstado('Tocá el Boton "iniciar" para jugar!');
 
 function obtenerValorAleatorio(valores){
 
@@ -60,6 +61,7 @@ function mostrarPorTiempo(name){
 }
 
 function mostrarSecuencia(delay, arr){
+    actualizarEstado('Turno de la máquina');
     let times = arr.length;
     let count = 0;
 
@@ -72,6 +74,7 @@ function mostrarSecuencia(delay, arr){
     
       if (count >= times) {
         deshabilitarBotones(false);
+        actualizarEstado('Turno del jugador');
         clearInterval(intervalId);
         return;
       }
@@ -120,7 +123,6 @@ function repetirSecuencia(cantidad){
 }
 
 function resetear(){
-
     listaSecuenciaJuego = []
     listaSecuenciaUsuario = []
     puntaje = 0;
@@ -165,7 +167,7 @@ function iniciarComparacion(){
         continuarJuego();
 
     }else{
-        alert("Perdiste");
+        actualizarEstado('Perdiste! Tocá el boton "Iniciar" para jugar de nuevo!', true);
         habilitarBotonIniciarJuego(true);
         continua = false;
         resetear()
@@ -174,6 +176,18 @@ function iniciarComparacion(){
     }
     listaSecuenciaUsuario = [];
 }
+
+function actualizarEstado(estado, error = false) {
+    const $estado = document.querySelector('#estado');
+    $estado.textContent = estado;
+    if (error) {
+      $estado.classList.remove('alert-primary');
+      $estado.classList.add('alert-danger');
+    } else {
+      $estado.classList.remove('alert-danger');
+      $estado.classList.add('alert-primary');
+    }
+  }
 
 
 // EVENTOS
