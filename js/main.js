@@ -140,24 +140,39 @@ function deshabilitarBotones(value){
             botones[i].disabled = false;
         }    
     }
-    habilitarBotonCompararSecuencias(false);
 }
 function habilitarBotonIniciarJuego(value){
     let iniciarBtn = document.querySelector("#iniciar-juego");
     value? iniciarBtn.disabled = false: iniciarBtn.disabled = true; 
-}
-function habilitarBotonCompararSecuencias(value){
-    let compararBtn = document.querySelector("#comparar");
-    value?compararBtn.disabled = false: compararBtn.disabled = true; 
 }
 
 function cambiarPuntaje(){
     document.querySelector("h2").innerText = `Puntaje: ${puntaje}`;
 }
 function usuarioIntrodujoSecuencia(){
-    if(listaSecuenciaUsuario.length > 0){
-        habilitarBotonCompararSecuencias(true);
+    if(listaSecuenciaUsuario.length === listaSecuenciaJuego.length){
+        iniciarComparacion();
     }
+}
+function iniciarComparacion(){
+    
+    let res = secuenciasSonIguales(listaSecuenciaJuego,listaSecuenciaUsuario);
+    if(res){
+        alert(`Bien Hecho!, vamos a la ronda ${nivel + 1}`);
+        nivel++;
+        puntaje++;
+        cambiarPuntaje();
+        continuarJuego();
+
+    }else{
+        alert("Perdiste");
+        habilitarBotonIniciarJuego(true);
+        continua = false;
+        resetear()
+        cambiarPuntaje();
+        
+    }
+    listaSecuenciaUsuario = [];
 }
 
 
@@ -190,25 +205,6 @@ document.querySelector("#green").onclick = function(event){
 document.querySelector("#iniciar-juego").onclick = function(event){
     inicioJuego();
     
-}
-document.querySelector("#comparar").onclick = function(event){
-    habilitarBotonCompararSecuencias(false);
-    let res = secuenciasSonIguales(listaSecuenciaJuego,listaSecuenciaUsuario);
-    if(res){
-        nivel++;
-        puntaje++;
-        cambiarPuntaje();
-        continuarJuego();
-
-    }else{
-        alert("Perdiste");
-        habilitarBotonIniciarJuego(true);
-        continua = false;
-        resetear()
-        cambiarPuntaje();
-        
-    }
-    listaSecuenciaUsuario = [];
 }
 
 
